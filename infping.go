@@ -112,7 +112,7 @@ func writePoints(config *toml.Tree, con *client.Client, host string, sent string
     bps := client.BatchPoints{
         Points:          pts,
         Database:        db,
-        RetentionPolicy: "default",
+        RetentionPolicy: "autogen",
     }
     _, err := con.Write(bps)
     if err != nil {
