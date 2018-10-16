@@ -1,0 +1,17 @@
+[Unit]
+Description=infPing
+Requires=network-online.target
+After=network-online.target
+
+[Service]
+Type=idle
+User=root
+Group=root
+WorkingDirectory=/yourinfpingfolder
+PIDFile=/var/run/infping.pid
+ExecStart=/yourinfpingfolder/infping
+ExecReload=/bin/kill -HUP $MAINPID
+KillSignal=SIGINT
+
+[Install]
+WantedBy=multi-user.target
