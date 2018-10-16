@@ -35,7 +35,7 @@ func slashSplitter(c rune) bool {
 }
 
 func readPoints(config *toml.Tree, con *client.Client) {
-    args := []string{"-B 1", "-D", "-r0", "-O 0", "-Q 10", "-p 1000", "-l"}
+    args := []string{"-B 1", "-D", "-r0", "-O 0", "-Q 10", "-p 15000", "-l"}
     hosts := config.Get("hosts.hosts").([]interface{})
     for _, v := range hosts {
         host, _ := v.(string)
